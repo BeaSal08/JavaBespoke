@@ -10,6 +10,10 @@ public class Application {
                 "\nisRemoteWorking: " + employee.isRemoteWorking()
         );
 
+        updateEmployee(employee);
+    }
+
+    private static void updateEmployee(Employee employee) {
         employee.setExperienceInYears(10);
         employee.setName("Sam");
         employee.setRemoteWorking(false);
