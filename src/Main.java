@@ -81,5 +81,12 @@ public class Main {
         System.out.println(x & z); //AND, results to 4 bc 0000 0100
         System.out.println(x | z); //OR, results to 7 bc 0000 0111 (hindi sya addition na OR)
 
+        // Assignment Operators
+        z += 10;
+        System.out.println("==== Assignment Operators ====" +
+                "\nz (before assign) = 6" + "\nz (aft assign): " + z
+        );
+
+
     }
 }
