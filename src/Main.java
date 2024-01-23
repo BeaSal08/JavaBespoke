@@ -96,12 +96,12 @@ public class Main {
         customer.setPhoneNumber(454545);
         customer.setKycDone(false);
         customer.setAreaCode('W');
-        customer.setCreditRating(200);
+        customer.setCreditRating(700);
 
-        if (customer.getAge() >= 21) {
-            System.out.println("Customer is eligible to open a bank account");
+        if (customer.getAge() >= 21 && customer.getCreditRating() >= 500) {
+            System.out.println("Customer is eligible to open a bank account without verification");
         }
-        if (customer.getCreditRating() <= 500) {
+        if (customer.getCreditRating() < 500) {
             System.out.println("Customer is not eligible for any loan or credit card");
         }
 
