@@ -87,6 +87,23 @@ public class Main {
                 "\nz (before assign) = 6" + "\nz (aft assign): " + z
         );
 
+        // Relational Operators
+        System.out.println("==== Relational Operators ====");
+        Customer customer = new Customer();
+
+        customer.setAge(30);
+        customer.setName("Deba");
+        customer.setPhoneNumber(454545);
+        customer.setKycDone(false);
+        customer.setAreaCode('W');
+        customer.setCreditRating(200);
+
+        if (customer.getAge() >= 21) {
+            System.out.println("Customer is eligible to open a bank account");
+        }
+        if (customer.getCreditRating() <= 500) {
+            System.out.println("Customer is not eligible for any loan or credit card");
+        }
 
     }
 }
