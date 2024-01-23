@@ -9,7 +9,7 @@ public class Main {
         System.out.println("y == 2000 ? : " +  y.equals(2000));
 
         // Instantiate a class to make an object
-        Customer customer = new Customer();
+        Customer customer = new Customer(); // uses the default constructor bc we havent created a constucor in the customer class
 
         // Set values of different fields of the customer
         customer.setAge(30);

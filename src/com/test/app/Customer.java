@@ -11,7 +11,6 @@ public class Customer {
 
     // getters-setters, so private fields can be accessed (by Main.java for example)
     // right click > generate > Getters and Setters > select fields u want > OK
-
     public int getAge() {
         return age;
     }
@@ -50,5 +49,12 @@ public class Customer {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    // Constructors - used when we allocate mem for the obj; for obj initialization
+    // right click > generate > constructors > select type > OK
+
+    // no argument constructor:
+    public Customer() {
     }
 }
