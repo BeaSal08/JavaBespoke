@@ -59,6 +59,7 @@ public class Main {
 
         // Operators in Java
         int x = 5;
+        int z = 6;
         boolean y = false;
 
         System.out.println("==== Arithmetic Operators ====" +
@@ -73,9 +74,12 @@ public class Main {
 
         System.out.println("not y: " + !y);
 
-        // results to original values bc arithmetic operators don't save changes values
-        System.out.println("==== Updated Arithmetic Operators ====" +
-                "\nx: " + x + "\ny: " + y
+        // Bitwise and Shift operators use bits
+        System.out.println("==== Bitwise Operators ====" +
+                "\nx (5): 0000 0101" + "\nz (6): 0000 0110"
         );
+        System.out.println(x & z); //AND, results to 4 bc 0000 0100
+        System.out.println(x | z); //OR, results to 7 bc 0000 0111 (should be 11????)
+
     }
 }
