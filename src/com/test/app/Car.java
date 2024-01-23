@@ -1,7 +1,7 @@
 package com.test.app;
 
 //public class Car {
-class Car {
+class Car { //default access modifier
     private String name;
     private int yearOfMake;
 
