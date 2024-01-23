@@ -79,7 +79,7 @@ public class Main {
                 "\nx (5): 0000 0101" + "\nz (6): 0000 0110"
         );
         System.out.println(x & z); //AND, results to 4 bc 0000 0100
-        System.out.println(x | z); //OR, results to 7 bc 0000 0111 (should be 11???)
+        System.out.println(x | z); //OR, results to 7 bc 0000 0111 (hindi sya addition na OR)
 
     }
 }
