@@ -6,8 +6,8 @@ public class Main {
         // Wrapper Class converting primitive to wrapper class
         // why? bc yearOfBirth is int and not Integer so it doesnt have extra functions like .equals()
         int yearOfBirth = 2000;
-        Integer y = yearOfBirth;
-        System.out.println("y == 2000 ? : " +  y.equals(2000));
+        Integer yob = yearOfBirth;
+        System.out.println("yob == 2000 ? : " +  yob.equals(2000));
 
         // Instantiate a class to make an object
         Customer customer = new Customer(); // uses the default constructor bc we havent created a constucor in the customer class
@@ -57,5 +57,25 @@ public class Main {
                 "\nphoneNumber: " + car.getYearOfMake()
         );
 
+        // Operators in Java
+        int x = 5;
+        boolean y = true;
+
+        System.out.println("==== Arithmetic Operators ====" +
+                "\nx: " + x + "\ny: " + y
+        );
+
+        System.out.println("post increment x: " + x++);
+        System.out.println("pre increment x: " + ++x);
+
+        System.out.println("post decrement x: " + x--);
+        System.out.println("pre decrement x: " + --x);
+
+        System.out.println("not y: " + !y);
+
+        // results to original values bc arithmetic operators don't save changes values
+        System.out.println("==== Updated Arithmetic Operators ====" +
+                "\nx: " + x + "\ny: " + y
+        );
     }
 }
