@@ -12,7 +12,6 @@ public class Customer {
     // getters-setters, so private fields can be accessed (by Main.java for example)
     // right click > generate > Getters and Setters > select fields u want > OK
 
-
     public int getAge() {
         return age;
     }
