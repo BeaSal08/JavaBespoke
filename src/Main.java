@@ -59,7 +59,7 @@ public class Main {
 
         // Operators in Java
         int x = 5;
-        boolean y = true;
+        boolean y = false;
 
         System.out.println("==== Arithmetic Operators ====" +
                 "\nx: " + x + "\ny: " + y
