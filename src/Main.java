@@ -49,5 +49,13 @@ public class Main {
                 "\nphoneNumber: " + car.getYearOfMake()
         );
 
+        car.setName("Honda");
+        car.setYearOfMake(2003);
+
+        System.out.println("==== Car Details ====" +
+                "\nAge: " + car.getName() +
+                "\nphoneNumber: " + car.getYearOfMake()
+        );
+
     }
 }
