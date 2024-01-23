@@ -1,6 +1,7 @@
 package com.test.app;
 
-public class Car {
+//public class Car {
+class Car {
     private String name;
     private int yearOfMake;
 
