@@ -94,11 +94,11 @@ public class Main {
         customer.setAge(30);
         customer.setName("Deba");
         customer.setPhoneNumber(454545);
-        customer.setKycDone(false);
+        customer.setKycDone(true);
         customer.setAreaCode('W');
         customer.setCreditRating(700);
 
-        if (customer.getAge() >= 21 && customer.getCreditRating() >= 500) {
+        if (customer.getAge() >= 21 && customer.getCreditRating() >= 500 && customer.isKycDone()) {
             System.out.println("Customer is eligible to open a bank account without verification");
         }
         if (customer.getCreditRating() < 500) {
