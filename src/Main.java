@@ -2,6 +2,12 @@ import com.test.app.Customer;
 
 public class Main {
     public static void main(String[] args) {
+        // Wrapper Class converting primitive to wrapper class
+        // why? bc yearOfBirth is int and not Integer so it doesnt have extra functions like .equals()
+        int yearOfBirth = 2000;
+        Integer y = yearOfBirth;
+        System.out.println("y == 2000 ? : " +  y.equals(2000));
+
         // Instantiate a class to make an object
         Customer customer = new Customer();
 
