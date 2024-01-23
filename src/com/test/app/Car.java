@@ -1,10 +1,10 @@
 package com.test.app;
 
-public class Car {
+private class Car {
     private String name;
     private int yearOfMake;
 
-    protected String getName() {
+    public String getName() {
         return name;
     }
 
