@@ -1,11 +1,12 @@
+import com.test.app.Customer;
+
 public class Main {
     public static void main(String[] args) {
-        // variables are in camelCase
+        Customer customer = new Customer();
 
-
-        System.out.println("age = " + age);
-        System.out.println("phoneNumber = " + phoneNumber);
-        System.out.println("isKycDone = " + isKycDone);
-        System.out.println("areaCode = " + areaCode);
+        System.out.println("age = " + customer.getAge());
+        System.out.println("phoneNumber = " + customer.getPhoneNumber());
+        System.out.println("isKycDone = " + customer.isKycDone());
+        System.out.println("areaCode = " + customer.getAreaCode());
     }
 }
