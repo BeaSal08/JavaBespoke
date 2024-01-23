@@ -105,5 +105,7 @@ public class Main {
             System.out.println("Customer is not eligible for any loan or credit card");
         }
 
+        // video point: 41 min day2
+
     }
 }
