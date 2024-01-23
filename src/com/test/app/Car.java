@@ -1,11 +1,10 @@
 package com.test.app;
 
-//public class Car {
-class Car { //default access modifier
+public class Car {
     private String name;
     private int yearOfMake;
 
-    public String getName() {
+    private String getName() {
         return name;
     }
 
