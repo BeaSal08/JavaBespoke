@@ -55,6 +55,6 @@ public class Customer {
     // right click > generate > constructors > select type > OK
 
     // no argument constructor:
-    public Customer() {
-    }
+//    public Customer() {
+//    }
 }
