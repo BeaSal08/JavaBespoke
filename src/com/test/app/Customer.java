@@ -8,6 +8,7 @@ public class Customer {
     private boolean isKycDone;
     private char areaCode;
     private String name;
+    private int creditRating;
 
     // getters-setters, so private fields can be accessed (by Main.java for example)
     // right click > generate > Getters and Setters > select fields u want > OK
@@ -49,6 +50,14 @@ public class Customer {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getCreditRating() {
+        return creditRating;
+    }
+
+    public void setCreditRating(int creditRating) {
+        this.creditRating = creditRating;
     }
 
     // Constructors - used when we allocate mem for the obj; for obj initialization
