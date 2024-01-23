@@ -18,5 +18,22 @@ public class Main {
                         "\nisKycDone: " + customer.isKycDone() +
                         "\nareaCode: " + customer.getAreaCode()
                 );
+
+        // Create another obj (has no relation to 1st customer)
+        Customer customer1 = new Customer();
+
+        customer1.setAge(40);
+        customer1.setName("Sam");
+        customer1.setPhoneNumber(636363);
+        customer1.setKycDone(true);
+        customer1.setAreaCode('A');
+
+        System.out.println("==== Customer Details ====" +
+                "\nAge: " + customer1.getAge() +
+                "\nphoneNumber: " + customer1.getPhoneNumber() +
+                "\nisKycDone: " + customer1.isKycDone() +
+                "\nareaCode: " + customer1.getAreaCode()
+        );
+
     }
 }
