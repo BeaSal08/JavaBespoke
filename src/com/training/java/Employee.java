@@ -5,7 +5,7 @@ public class Employee {
     private String name;
     private boolean remoteWorking;
 
-    public int getExperienceInYears() {
+    protected int getExperienceInYears() {
         return experienceInYears;
     }
 
@@ -13,7 +13,7 @@ public class Employee {
         this.experienceInYears = experienceInYears;
     }
 
-    public String getName() {
+    protected String getName() {
         return name;
     }
 
@@ -21,7 +21,7 @@ public class Employee {
         this.name = name;
     }
 
-    public boolean isRemoteWorking() {
+    protected boolean isRemoteWorking() {
         return remoteWorking;
     }
 

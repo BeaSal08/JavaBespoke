@@ -2,6 +2,9 @@ package com.training.java;
 
 public class Application {
     public static void main(String[] args) {
+        Employer employer = new Employer();
+        employer.display();
+
         Employee employee = new Employee(5, "Deba", true);
 
         System.out.println("==== Employee Details ====" +
