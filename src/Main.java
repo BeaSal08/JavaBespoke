@@ -1,3 +1,4 @@
+import com.test.app.Car;
 import com.test.app.Customer;
 
 public class Main {
@@ -39,6 +40,13 @@ public class Main {
                 "\nphoneNumber: " + customer1.getPhoneNumber() +
                 "\nisKycDone: " + customer1.isKycDone() +
                 "\nareaCode: " + customer1.getAreaCode()
+        );
+
+        // Constructors:
+        Car car = new Car("Mini Cooper", 1999);
+        System.out.println("==== Car Details ====" +
+                "\nAge: " + car.getName() +
+                "\nphoneNumber: " + car.getYearOfMake()
         );
 
     }
