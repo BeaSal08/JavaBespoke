@@ -4,7 +4,7 @@ public class Car {
     private String name;
     private int yearOfMake;
 
-    private String getName() {
+    protected String getName() {
         return name;
     }
 
