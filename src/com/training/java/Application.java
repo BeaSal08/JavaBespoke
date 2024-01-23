@@ -1,5 +1,7 @@
 package com.training.java;
 
+import com.training.company.Employer;
+
 public class Application {
     public static void main(String[] args) {
         Employer employer = new Employer();
