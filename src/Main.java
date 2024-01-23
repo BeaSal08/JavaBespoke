@@ -52,7 +52,7 @@ public class Main {
         car.setName("Honda");
         car.setYearOfMake(2003);
 
-        System.out.println("==== Car Details ====" +
+        System.out.println("==== Updated Car Details ====" +
                 "\nAge: " + car.getName() +
                 "\nphoneNumber: " + car.getYearOfMake()
         );
