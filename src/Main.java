@@ -97,7 +97,7 @@ public class Main {
         customer.setKycDone(false);
         customer.setBankAccountType("Saving");
         customer.setAreaCode('W');
-        customer.setCreditRating(200);
+        customer.setCreditRating(700);
 
         // Verifies what type stuff the customer is eligible for based on their credentials
         //AND
@@ -109,14 +109,13 @@ public class Main {
         {
             System.out.println("Customer is eligible to open a bank account with verification");
         }
+        if(customer.getCreditRating() == 700)
+        {
+            System.out.println("Customer is eligible for locker facilities");
+        }
         else
         {
             System.out.println("Customer is not eligible for any loan or credit card");
-        }
-
-        if(customer.getBankAccountType().equals("Saving"))
-        {
-
         }
 
     }
