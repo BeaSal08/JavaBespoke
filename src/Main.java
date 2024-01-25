@@ -4,7 +4,12 @@ public class Main {
     public static void main(String[] args) {
         // Arrays
         // 1D
-        String branchNames[] = {"Manila", "Paris", "Mumbai"};
+//        String branchNames[] = {"Manila", "Paris", "Mumbai"};
+        String branchNames[] = new String[3];
+        branchNames[0] = "Manila";
+        branchNames[1] = "Paris";
+        branchNames[2] = "Mumbai";
+
         System.out.println("1st branch, index 0: " + branchNames[0]);
         System.out.println("Array length: " + branchNames.length);
 
