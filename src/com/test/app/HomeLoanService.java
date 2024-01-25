@@ -52,7 +52,7 @@ public class HomeLoanService extends LoanService implements CreditInterface {
         {
             creditCheckPassed = "No";
         }
-        if((customer.getCreditRating() >= 700) || (customer.getAge() >= 21))
+        else if((customer.getCreditRating() >= 700) || (customer.getAge() >= 21))
         {
             creditCheckPassed = "Yes";
         }

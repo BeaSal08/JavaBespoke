@@ -5,7 +5,7 @@ public class Main {
         Customer customer = new Customer();
         customer.setName("Deba");
         customer.setAge(31);
-        customer.setCreditRating(700);
+        customer.setCreditRating(600);
         customer.setBankAccountType("Saving");
 
         Loan loan = new Loan();
