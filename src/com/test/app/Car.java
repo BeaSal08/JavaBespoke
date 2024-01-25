@@ -1,8 +1,11 @@
 package com.test.app;
 
 public class Car {
+    //variables
     private String name;
     private int yearOfMake;
+
+    //getters and setters
 
     public String getName() {
         return name;

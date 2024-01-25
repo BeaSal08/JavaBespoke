@@ -15,10 +15,10 @@ public class Application {
                 "\nisRemoteWorking: " + employee.isRemoteWorking()
         );
 
-        updateEmployee(employee);
+        updateEmployee(employee); // calls the updateEmployee method
     }
 
-    private static void updateEmployee(Employee employee) {
+    private static void updateEmployee(Employee employee) { //updates employee info by setting new field info
         employee.setExperienceInYears(10);
         employee.setName("Sam");
         employee.setRemoteWorking(false);

@@ -10,7 +10,7 @@ public class Main {
 //        System.out.println("yob == 2000 ? : " +  yob.equals(2000));
 //
 //        // Instantiate a class to make an object
-//        Customer customer = new Customer(); // uses the default constructor bc we havent created a constucor in the customer class
+//        Customer customer = new Customer(); // uses the default constructor bc we havent created a constructor in the customer class
 //
 //        // Set values of different fields of the customer
 //        customer.setAge(30);
@@ -57,47 +57,49 @@ public class Main {
 //                "\nphoneNumber: " + car.getYearOfMake()
 //        );
 
-        // Operators in Java
-        int x = 5;
-        int z = 6;
-        boolean y = false;
-
-        System.out.println("==== Arithmetic Operators ====" +
-                "\nx: " + x + "\ny: " + y
-        );
-
-        System.out.println("post increment x: " + x++);
-        System.out.println("pre increment x: " + ++x);
-
-        System.out.println("post decrement x: " + x--);
-        System.out.println("pre decrement x: " + --x);
-
-        System.out.println("not y: " + !y);
-
-        // Bitwise and Shift operators use bits
-        System.out.println("==== Bitwise Operators ====" +
-                "\nx (5): 0000 0101" + "\nz (6): 0000 0110"
-        );
-        System.out.println(x & z); //AND, results to 4 bc 0000 0100
-        System.out.println(x | z); //OR, results to 7 bc 0000 0111 (hindi sya addition na OR)
-
-        // Assignment Operators
-        z += 10;
-        System.out.println("==== Assignment Operators ====" +
-                "\nz (before assign) = 6" + "\nz (aft assign): " + z
-        );
+//        // Operators in Java
+//        int x = 5;
+//        int z = 6;
+//        boolean y = false;
+//
+//        System.out.println("==== Arithmetic Operators ====" +
+//                "\nx: " + x + "\ny: " + y
+//        );
+//
+//        System.out.println("post increment x: " + x++);
+//        System.out.println("pre increment x: " + ++x);
+//
+//        System.out.println("post decrement x: " + x--);
+//        System.out.println("pre decrement x: " + --x);
+//
+//        System.out.println("not y: " + !y);
+//
+//        // Bitwise and Shift operators use bits
+//        System.out.println("==== Bitwise Operators ====" +
+//                "\nx (5): 0000 0101" + "\nz (6): 0000 0110"
+//        );
+//        System.out.println(x & z); //AND, results to 4 bc 0000 0100
+//        System.out.println(x | z); //OR, results to 7 bc 0000 0111 (hindi sya addition na OR)
+//
+//        // Assignment Operators
+//        z += 10;
+//        System.out.println("==== Assignment Operators ====" +
+//                "\nz (before assign) = 6" + "\nz (aft assign): " + z
+//        );
 
         // Relational Operators
         System.out.println("==== Relational Operators ====");
-        Customer customer = new Customer();
+        Customer customer = new Customer(); // Creates a customer object whose fields are set
 
         customer.setAge(30);
         customer.setName("Deba");
         customer.setPhoneNumber(454545);
         customer.setKycDone(false);
+        customer.setBankAccountType("Saving");
         customer.setAreaCode('W');
         customer.setCreditRating(200);
 
+        // Verifies what type stuff the customer is eligible for based on their credentials
         //AND
         if (customer.getAge() >= 21 && customer.getCreditRating() >= 500 && customer.isKycDone()) {
             System.out.println("Customer is eligible to open a bank account without verification");
@@ -107,15 +109,15 @@ public class Main {
         {
             System.out.println("Customer is eligible to open a bank account with verification");
         }
-//        if (customer.getCreditRating() <= 500) {
-//            System.out.println("Customer is not eligible for any loan or credit card");
-//        }
         else
         {
             System.out.println("Customer is not eligible for any loan or credit card");
         }
 
-        // video point: 41 min day2
+        if(customer.getBankAccountType().equals("Saving"))
+        {
+
+        }
 
     }
 }

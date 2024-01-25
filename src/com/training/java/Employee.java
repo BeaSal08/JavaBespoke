@@ -1,9 +1,12 @@
 package com.training.java;
 
 public class Employee {
+    //variables
     private int experienceInYears;
     private String name;
     private boolean remoteWorking;
+
+    //getters and setters
 
     protected int getExperienceInYears() {
         return experienceInYears;
@@ -25,6 +28,7 @@ public class Employee {
         return remoteWorking;
     }
 
+    // constructor
     public void setRemoteWorking(boolean remoteWorking) {
         this.remoteWorking = remoteWorking;
     }
