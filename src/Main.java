@@ -29,7 +29,7 @@ public class Main {
         "\nName: " + goldCustomer.getName() +
         "\nInitial Account Balance: " + goldCustomer.getInitialAccountBalance() +
         "\nCustomer Type: " + goldCustomer.getCustomerType() +
-                "\nFlat Cashback: " + flatCashback
+                        "\nFlat Cashback: " + flatCashback
         );
     }
 }
