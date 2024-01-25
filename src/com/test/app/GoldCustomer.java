@@ -15,10 +15,9 @@ public class GoldCustomer extends Customer {
     }
 
     //no arg constructor
-
-
     public GoldCustomer() {
         super(); //makes sure that when we initialize the gold customer, we will be invoking the parent class
+        System.out.println("Gold Customer is created");
     }
 
     //getters and setters

@@ -6,6 +6,10 @@ import com.test.app.GoldCustomer;
 public class Main {
     public static void main(String[] args) {
         // Polymorphism - Overriding and Inheritance
+        //PARENT:
+        Customer customer = new Customer();
+        customer.getDefaultPrivileges();
+
         //CHILD:
         GoldCustomer goldCustomer = new GoldCustomer();
         //Inherited properties
@@ -18,10 +22,6 @@ public class Main {
         //own property
         goldCustomer.setCustomerPrivilege("Gold");
         goldCustomer.getDefaultPrivileges(); //<--- call overriding method, call from our child class
-
-        //PARENT:
-        Customer customer = new Customer();
-        customer.getDefaultPrivileges();
 
         System.out.println("=== Gold Customer Details ===" +
         "\nPrivileges: " + goldCustomer.getCustomerPrivilege() +

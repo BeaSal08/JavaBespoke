@@ -13,10 +13,9 @@ public class Customer {
 
     int initialAccountBalance = 2000;
 
-    //no arg constructor:
-
-
+    //constructor:
     public Customer() {
+        System.out.println("A customer is created");
     }
 
     //method (override example, masa GoldCustomer yung isa):
