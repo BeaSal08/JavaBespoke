@@ -22,5 +22,13 @@ public class Main {
         for (String customer : customers) { //customer not important, can be abc or other tbh
             System.out.println("Customer applied for loan: " + customer);
         }
+
+        //WHILE LOOP
+        int i = 0;
+        while (i < customers.length)
+        {
+            System.out.println("Customer applied for loan: " + customers[i]);
+            i++;
+        }
     }
 }
