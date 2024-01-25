@@ -20,7 +20,7 @@ public class Customer {
     }
 
     //method (override example, masa GoldCustomer yung isa):
-    void getDefaultPrivileges()
+    public void getDefaultPrivileges()
     {
         System.out.println("Default privileges are: ATM Card, Free ATM Withdrawal, 1% Interest, 1% Cashback");
     }

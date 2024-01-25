@@ -12,10 +12,12 @@ public class Main {
         goldCustomer.setName("Chris");
         goldCustomer.setKycDone(false);
         goldCustomer.setCreditRating(344);
-//        goldCustomer.setInitialAccountBalance(10000); //if u wanna set its value
-        goldCustomer.setInitialAccountBalance(5000);
+
+        goldCustomer.setInitialAccountBalance(10000);
         //own property
         goldCustomer.setCustomerPrivilege("Gold");
+        goldCustomer.getDefaultPrivileges(); //<--- call overriding method, call from our child class
+
 
         System.out.println("=== Gold Customer Details ===" +
                 "\nPrivileges: " + goldCustomer.getCustomerPrivilege() +

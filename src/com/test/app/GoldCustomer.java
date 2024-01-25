@@ -9,7 +9,7 @@ public class GoldCustomer extends Customer {
 
     //method (overriding example, nasa Customer.java yung isa)
     //override = same name, same params
-    void getDefaultPrivileges()
+    public void getDefaultPrivileges()
     {
         System.out.println("Gold privileges are: ATM Card, Free ATM Withdrawal, 1% Interest, 1% Cashback, and locker at 50% discount");
     }
