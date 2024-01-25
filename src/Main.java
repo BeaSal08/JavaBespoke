@@ -21,10 +21,15 @@ public class Main {
         goldCustomer.setCustomerType(CustomerType.GOLD.name()); //to get string, use .name()
         goldCustomer.getDefaultPrivileges(); //<--- call overriding method, call from our child class
 
+        CustomerService customerService = new CustomerService();
+        int flatCashback = customerService.calculateFlatCashback(CustomerType.GOLD);
+
         System.out.println("=== Gold Customer Details ===" +
         "\nPrivileges: " + goldCustomer.getCustomerPrivilege() +
         "\nName: " + goldCustomer.getName() +
         "\nInitial Account Balance: " + goldCustomer.getInitialAccountBalance() +
-        "\nCustomer Type: " + goldCustomer.getCustomerType());
+        "\nCustomer Type: " + goldCustomer.getCustomerType() +
+                "\nFlat Cashback: " + flatCashback
+        );
     }
 }

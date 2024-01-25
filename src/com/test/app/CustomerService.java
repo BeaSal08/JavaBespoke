@@ -32,4 +32,14 @@ public class CustomerService {
             System.out.println("Customer privileges are: locker");
         }
     }
+
+    public int calculateFlatCashback(CustomerType customerType){
+        int flatCashback = switch(customerType)
+        {
+            case GOLD,DIAMOND -> 1000;
+            default -> 500;
+        };
+
+        return  flatCashback;
+    }
 }
