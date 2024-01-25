@@ -11,6 +11,8 @@ public class Customer {
     private int creditRating;
     private String bankAccountType;
 
+    int initialAccountBalance = 2000;
+
     // getters-setters, so private fields can be accessed (by Main.java for example)
     // right click > generate > Getters and Setters > select fields u want > OK
     public int getAge() {
