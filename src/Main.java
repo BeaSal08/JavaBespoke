@@ -1,7 +1,4 @@
-import com.test.app.Car;
-import com.test.app.Customer;
-import com.test.app.CustomerService;
-import com.test.app.GoldCustomer;
+import com.test.app.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -17,15 +14,17 @@ public class Main {
         goldCustomer.setName("Chris");
         goldCustomer.setKycDone(false);
         goldCustomer.setCreditRating(344);
-
         goldCustomer.setInitialAccountBalance(10000);
+
         //own property
         goldCustomer.setCustomerPrivilege("Gold");
+        goldCustomer.setCustomerType(CustomerType.GOLD.name()); //to get string, use .name()
         goldCustomer.getDefaultPrivileges(); //<--- call overriding method, call from our child class
 
         System.out.println("=== Gold Customer Details ===" +
         "\nPrivileges: " + goldCustomer.getCustomerPrivilege() +
         "\nName: " + goldCustomer.getName() +
-        "\nInitial Account Balance: " + goldCustomer.getInitialAccountBalance());
+        "\nInitial Account Balance: " + goldCustomer.getInitialAccountBalance() +
+        "\nCustomer Type: " + goldCustomer.getCustomerType());
     }
 }
