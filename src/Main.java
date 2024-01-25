@@ -1,35 +1,22 @@
 import com.test.app.Car;
 import com.test.app.Customer;
 import com.test.app.CustomerService;
+import com.test.app.GoldCustomer;
 
 public class Main {
     public static void main(String[] args) {
-        // Polymorphism - Overloading
-        Customer customer = new Customer(); // Creates a customer object whose fields are set
+        // Polymorphism - Overriding and Inheritance
+        GoldCustomer goldCustomer = new GoldCustomer();
+        //Inherited properties
+        goldCustomer.setAge(34);
+        goldCustomer.setName("Chris");
+        goldCustomer.setKycDone(false);
+        goldCustomer.setCreditRating(344);
+        //own property
+        goldCustomer.setCustomerPrivilege("Gold");
 
-        customer.setAge(30);
-        customer.setName("Deba");
-        customer.setPhoneNumber(454545);
-        customer.setKycDone(true);
-        customer.setBankAccountType("Saving");
-        customer.setAreaCode('W');
-        customer.setCreditRating(800);
-
-        // Initialize customer service so you can use its functions
-        // this will show you 2 diff options for addPrivilege bc of overloading we did in CustomerService.java
-        CustomerService customerService = new CustomerService();
-//        customerService.addPrivilege(customer.getCreditRating());
-        customerService.addPrivilege(customer.getCreditRating(), customer.isKycDone());
-
-        Customer customer1 = new Customer();
-
-        customer1.setAge(30);
-        customer1.setName("Sam");
-        customer1.setPhoneNumber(454545);
-        customer1.setBankAccountType("Saving");
-        customer1.setAreaCode('W');
-        customer1.setCreditRating(700);
-        customerService.addPrivilege(customer1.getCreditRating());
-
+        System.out.println("=== Gold Customer Details ===" +
+                "\nPrivileges: " + goldCustomer.getCustomerPrivilege() +
+                "\nName: " + goldCustomer.getName());
     }
 }
