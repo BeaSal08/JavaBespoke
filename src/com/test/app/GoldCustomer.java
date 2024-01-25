@@ -7,6 +7,8 @@ public class GoldCustomer extends Customer {
     private int initialAccountBalance = super.initialAccountBalance + 5000;
     // super = used to access parent class instance variable initialAccountBalance (kase base customer gets 2k, gold gets 7k)
 
+    private String customerType;
+
     //method (overriding example, nasa Customer.java yung isa)
     //override = same name, same params
     public void getDefaultPrivileges()
@@ -35,5 +37,13 @@ public class GoldCustomer extends Customer {
 
     public void setInitialAccountBalance(int initialAccountBalance) {
         this.initialAccountBalance = initialAccountBalance;
+    }
+
+    public String getCustomerType() {
+        return customerType;
+    }
+
+    public void setCustomerType(String customerType) {
+        this.customerType = customerType;
     }
 }
