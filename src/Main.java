@@ -99,6 +99,11 @@ public class Main {
         customer.setAreaCode('W');
         customer.setCreditRating(700);
 
+        // Ternary Operators, syntax: dataType varName = condition ? trueResult : falseResult
+        System.out.println("==== Ternary Operators ====");
+        boolean eligibility = customer.getCreditRating() >= 500 ? true : false;
+        System.out.println("Eligibility = " + eligibility);
+
         // Verifies what type stuff the customer is eligible for based on their credentials
         //AND
         if (customer.getAge() >= 21 && customer.getCreditRating() >= 500 && customer.isKycDone()) {
