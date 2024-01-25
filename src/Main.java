@@ -1,4 +1,9 @@
 import com.test.app.*;
+import com.training.company.EmployerService;
+import com.training.company.EmploymentService;
+import com.training.company.TypeOfEmployee;
+import com.training.java.Employee;
+import com.training.java.Salary;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,19 +21,17 @@ public class Main {
 //        HomeLoanService homeLoanService = new HomeLoanService();
 //        homeLoanService.applyLoan(customer);
 
-        //FOR LOOPS
-        String customers[] = {"Deba", "Sam", "Yasmin"};
+        Employee employee = new Employee();
+        EmployerService employerService = new EmployerService();
+        Salary salary = employerService.calculateSalary(500, 500);
+        employee.setSalary(salary);
+        employee.setName("Sara");
+        employee.setExperienceInYears(6);
+        employee.setTypeOfEmployee(TypeOfEmployee.PEOPLEPERSON);
 
-        for (String customer : customers) { //customer not important, can be abc or other tbh
-            System.out.println("Customer applied for loan: " + customer);
-        }
-
-        //WHILE LOOP
-        int i = 0;
-        while (i < customers.length)
-        {
-            System.out.println("Customer applied for loan: " + customers[i]);
-            i++;
-        }
+        EmploymentService employmentService = new EmploymentService();
+        employmentService.attendTraining(employee);
+        employmentService.signEmploymentDocuments(employee);
+        employmentService.receiveLaptop(employee.getTypeOfEmployee());
     }
 }

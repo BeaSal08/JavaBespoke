@@ -1,11 +1,15 @@
 package com.training.java;
 
+import com.training.company.TypeOfEmployee;
+
 public class Employee {
     //variables
     private int experienceInYears;
     private String name;
     private boolean remoteWorking;
     private Salary salary;
+
+    private TypeOfEmployee typeOfEmployee;
 
     //getters and setters
 
@@ -49,6 +53,14 @@ public class Employee {
 
     public void setNumberOfLeaves(int numberOfLeaves) {
         this.numberOfLeaves = numberOfLeaves;
+    }
+
+    public TypeOfEmployee getTypeOfEmployee() {
+        return typeOfEmployee;
+    }
+
+    public void setTypeOfEmployee(TypeOfEmployee typeOfEmployee) {
+        this.typeOfEmployee = typeOfEmployee;
     }
 
     // constructor
