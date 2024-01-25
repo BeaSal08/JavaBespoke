@@ -9,7 +9,7 @@ public class Main {
         customer.setBankAccountType("Saving");
 
         Loan loan = new Loan();
-        loan.setLoanAmount(9000);
+        loan.setLoanAmount(20000);
         loan.setLoanTypes(LoanTypes.HOME);
         customer.setLoan(loan);
 
