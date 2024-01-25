@@ -13,6 +13,19 @@ public class Customer {
 
     int initialAccountBalance = 2000;
 
+    //no arg constructor:
+
+
+    public Customer() {
+    }
+
+    //method (override example, masa GoldCustomer yung isa):
+    void getDefaultPrivileges()
+    {
+        System.out.println("Default privileges are: ATM Card, Free ATM Withdrawal, 1% Interest, 1% Cashback");
+    }
+
+
     // getters-setters, so private fields can be accessed (by Main.java for example)
     // right click > generate > Getters and Setters > select fields u want > OK
     public int getAge() {
