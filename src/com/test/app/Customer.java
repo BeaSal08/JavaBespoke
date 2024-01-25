@@ -1,8 +1,6 @@
 package com.test.app;
 
-// Class names start with capital letters
 public class Customer {
-    //set up fields for the Customer (bc it is a blueprint)
     private int age;
     private long phoneNumber;
     private boolean isKycDone;
@@ -10,8 +8,14 @@ public class Customer {
     private String name;
     private int creditRating;
     private String bankAccountType;
-
     int initialAccountBalance = 2000;
+
+    private Loan loan;
+
+    private String customerId;
+    private CustomerType customerType;
+
+    private String address;
 
     //constructor:
     public Customer() {
@@ -26,7 +30,6 @@ public class Customer {
 
 
     // getters-setters, so private fields can be accessed (by Main.java for example)
-    // right click > generate > Getters and Setters > select fields u want > OK
     public int getAge() {
         return age;
     }
@@ -81,5 +84,45 @@ public class Customer {
 
     public void setBankAccountType(String bankAccountType) {
         this.bankAccountType = bankAccountType;
+    }
+
+    public int getInitialAccountBalance() {
+        return initialAccountBalance;
+    }
+
+    public void setInitialAccountBalance(int initialAccountBalance) {
+        this.initialAccountBalance = initialAccountBalance;
+    }
+
+    public Loan getLoan() {
+        return loan;
+    }
+
+    public void setLoan(Loan loan) {
+        this.loan = loan;
+    }
+
+    public String getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
+    }
+
+    public CustomerType getCustomerType() {
+        return customerType;
+    }
+
+    public void setCustomerType(CustomerType customerType) {
+        this.customerType = customerType;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }

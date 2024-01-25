@@ -1,5 +1,8 @@
 package com.test.app;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 // EXAMPLE FOR POLYMORPHISM OVERLOADING
 // overloading: same method, diff params, same class
 // I guess you can say it's good for when you want to use the same func name but it has diff functionalities
@@ -32,7 +35,6 @@ public class CustomerService {
             System.out.println("Customer privileges are: locker");
         }
     }
-
     public int calculateFlatCashback(CustomerType customerType){
         int flatCashback = switch(customerType)
         {
@@ -42,5 +44,117 @@ public class CustomerService {
         };
 
         return  flatCashback;
+    }
+
+    //Lists
+    //Idea: whenever there is a new customer, we add them to the list
+    // 1. create list of customers
+    public ArrayList<Customer> createCustomerList()
+    {
+        //First customer
+        ArrayList<Customer> customers = new ArrayList<>(); //List of Customers
+        Customer customer1 = new Customer();
+        customer1.setAge(32);
+        customer1.setName("Don");
+        customer1.setCustomerId("BANK1000");
+        customer1.setBankAccountType("Saving");
+        customer1.setCreditRating(400);
+        customer1.setInitialAccountBalance(9000);
+        customer1.setAddress("1 Manila Road, Manila");
+        customer1.setCustomerType(CustomerType.PLATINUM);
+
+        //Second customer
+        Customer customer2 = new Customer();
+        customer2.setAge(37);
+        customer2.setName("Sara");
+        customer2.setCustomerId("BANK1001");
+        customer2.setBankAccountType("Saving");
+        customer2.setCreditRating(400);
+        customer2.setInitialAccountBalance(1000);
+        customer2.setAddress("2 Mumbai Street, Mumbai");
+        customer2.setCustomerType(CustomerType.SILVER);
+
+        //Third customer
+        Customer customer3 = new Customer();
+        customer3.setAge(22);
+        customer3.setName("Mark");
+        customer3.setCustomerId("BANK1002");
+        customer3.setBankAccountType("Investment");
+        customer3.setCreditRating(900);
+        customer3.setInitialAccountBalance(18000);
+        customer3.setAddress("3 Paris Street, Paris Road");
+        customer3.setCustomerType(CustomerType.DIAMOND);
+
+        //add customers to arraylist
+        customers.add(customer1);
+        customers.add(customer2);
+        customers.add(customer3);
+
+        System.out.println("Number of customers: " + customers.size());
+        return customers;
+    }
+
+
+    // 2. use list to loop through for bank acc creation
+    public void openBankAccount(ArrayList<Customer> customers)
+    {
+        HashMap<String,String> welcomeKitMap = sendWelcomeKit(customers);
+
+
+        for(Customer customer : customers )
+        {
+        if(customer.getBankAccountType() != null)
+        {
+            if(customer.getBankAccountType().equals("Saving"))
+            {
+                if(customer.getInitialAccountBalance() >= 3000)
+                {
+                    System.out.println("Savings bank account opened for customer: " + customer.getName() );
+                    addPrivilege(customer.getCreditRating(), customer.isKycDone());
+                    int flatCashBack = calculateFlatCashback(customer.getCustomerType());
+
+                    if(welcomeKitMap.containsKey(customer.getCustomerId()) && (customer.initialAccountBalance > 8000))
+                    {
+                        System.out.println("Welcome kit sent: ATM Card, bank booklet, bank logo stickers to address: " +
+                                welcomeKitMap.get(customer.getCustomerId()));
+                    }
+                }
+                else
+                {
+                    System.out.println("3000 is the minimum required balance for Savings bank account");
+                }
+            }
+            else if(customer.getBankAccountType().equals("Investment"))
+            {
+                if((customer.getInitialAccountBalance() >= 10000)
+                        && (customer.getCreditRating() >= 500)
+                        && (customer.getAge() >= 21))
+                {
+                    System.out.println("Investment bank account opened for customer: " + customer.getName());
+                    addPrivilege(customer.getCreditRating(), customer.isKycDone());
+                    int flatCashBack = calculateFlatCashback(customer.getCustomerType());
+                }
+                else
+                {
+                    System.out.println("10000 is the minimum required balance for Investment bank account");
+                }
+            }
+        }
+        }
+    }
+
+    public HashMap<String,String> sendWelcomeKit(ArrayList<Customer> customers)
+    {
+
+        HashMap<String,String> welcomeKitMap = new HashMap<>();
+        //loop through customers
+        for (Customer customer : customers)
+        {
+            welcomeKitMap.put(customer.getCustomerId(), customer.getAddress()); // (key,value)
+        }
+
+        //check if the customers bank balance is beyond a certain limit, send a welcome kit
+
+        return welcomeKitMap;
     }
 }
