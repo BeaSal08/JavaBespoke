@@ -15,7 +15,14 @@ public class Application {
         salary.setMonthlyPay(finalPay);
 
         System.out.println("=== Employee Details ===" +
-                "\nmMonthly Pay: " + salary.getMonthlyPay());
+                "\nMonthly Pay: " + salary.getMonthlyPay());
+
+        Employee employee2 = new Employee(5,"Deba", true);
+        Salary salary2 = employerService.calculateSalary(500, 500);
+        employee2.setSalary(salary2);
+
+        System.out.println("=== Employee Details ===" +
+                "\nMonthly Pay: " + salary2.getMonthlyPay());
 
     }
 }
