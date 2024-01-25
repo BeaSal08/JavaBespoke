@@ -1,8 +1,6 @@
 package com.test.app;
 
-// Class names start with capital letters
 public class Customer {
-    //set up fields for the Customer (bc it is a blueprint)
     private int age;
     private long phoneNumber;
     private boolean isKycDone;
@@ -10,6 +8,8 @@ public class Customer {
     private String name;
     private int creditRating;
     private String bankAccountType;
+
+
 
     int initialAccountBalance = 2000;
 
@@ -26,7 +26,6 @@ public class Customer {
 
 
     // getters-setters, so private fields can be accessed (by Main.java for example)
-    // right click > generate > Getters and Setters > select fields u want > OK
     public int getAge() {
         return age;
     }
