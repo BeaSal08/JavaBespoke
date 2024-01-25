@@ -17,6 +17,7 @@ public class Main {
 
         System.out.println("=== Gold Customer Details ===" +
                 "\nPrivileges: " + goldCustomer.getCustomerPrivilege() +
-                "\nName: " + goldCustomer.getName());
+                "\nName: " + goldCustomer.getName() +
+                "\nInitial Account Balance: " + goldCustomer.getInitialAccountBalance());
     }
 }

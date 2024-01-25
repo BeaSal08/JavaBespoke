@@ -8,7 +8,6 @@ public class GoldCustomer extends Customer {
     // super = used to access parent class instance variable initialAccountBalance (kase base customer gets 2k, gold gets 7k)
 
     //getters and setters
-
     public String getCustomerPrivilege() {
         return customerPrivilege;
     }
