@@ -19,15 +19,13 @@ public class Main {
         goldCustomer.setCustomerPrivilege("Gold");
         goldCustomer.getDefaultPrivileges(); //<--- call overriding method, call from our child class
 
-//        System.out.println("=== Gold Customer Details ===" +
-//                "\nPrivileges: " + goldCustomer.getCustomerPrivilege() +
-//                "\nName: " + goldCustomer.getName() +
-//                "\nInitial Account Balance: " + goldCustomer.getInitialAccountBalance());
-
         //PARENT:
         Customer customer = new Customer();
         customer.getDefaultPrivileges();
 
-
+        System.out.println("=== Gold Customer Details ===" +
+        "\nPrivileges: " + goldCustomer.getCustomerPrivilege() +
+        "\nName: " + goldCustomer.getName() +
+        "\nInitial Account Balance: " + goldCustomer.getInitialAccountBalance());
     }
 }
