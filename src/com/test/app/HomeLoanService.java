@@ -1,6 +1,6 @@
 package com.test.app;
 //subclass of abstract class
-public class HomeLoanService extends LoanService {
+public class HomeLoanService extends LoanService implements CreditInterface {
     //hover, click on implement methods, ok
     @Override
     public void applyLoan(Customer customer) {
@@ -8,20 +8,24 @@ public class HomeLoanService extends LoanService {
         {
             if(customer.getLoan().getLoanTypes().equals(LoanTypes.HOME))
             {
-                Loan loan = new Loan();
-                int finalLoanAmount = customer.getLoan().getLoanAmount()*80/100;
-                int maxLoanAmount = calculateLoanCap(LoanTypes.HOME);
+                String creditCheckPassed = performCreditCheck(customer);
+                if(creditCheckPassed.equals("Yes")) {
+                    Loan loan = new Loan();
+                    int finalLoanAmount = customer.getLoan().getLoanAmount() * 80 / 100;
+                    int maxLoanAmount = calculateLoanCap(LoanTypes.HOME);
 
-                if (finalLoanAmount > maxLoanAmount)
-                {
-                    System.out.println("The max loan cap has been reached for home loan. Loan cant be disbursed");
+                    if (finalLoanAmount > maxLoanAmount) {
+                        System.out.println("The max loan cap has been reached for home loan. Loan cant be disbursed");
+                    } else {
+                        loan.setLoanAmount(finalLoanAmount);
+                        loan.setInterest(finalLoanAmount / 10);
+                        customer.setLoan(loan);
+                        System.out.println("Home loan disbursed. Final loan amount: " + finalLoanAmount);
+                    }
                 }
                 else
                 {
-                    loan.setLoanAmount(finalLoanAmount);
-                    loan.setInterest(finalLoanAmount/10);
-                    customer.setLoan(loan);
-                    System.out.println("Home loan disbursed. Final loan amount: " + finalLoanAmount);
+                    System.out.println("Your credit rating is not good enough for getting a loan");
                 }
             }
             else
@@ -41,4 +45,18 @@ public class HomeLoanService extends LoanService {
         return maxLoanAmount;
     }
 
+    @Override
+    public String performCreditCheck(Customer customer) {
+        String creditCheckPassed = null;
+        if((customer.getCreditRating() <= 700) || (customer.getAge() <= 21))
+        {
+            creditCheckPassed = "No";
+        }
+        if((customer.getCreditRating() >= 700) || (customer.getAge() >= 21))
+        {
+            creditCheckPassed = "Yes";
+        }
+        System.out.println("Credit check passed? " + creditCheckPassed);
+        return creditCheckPassed;
+    }
 }
