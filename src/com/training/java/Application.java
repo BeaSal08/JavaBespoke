@@ -1,32 +1,21 @@
 package com.training.java;
 
 import com.training.company.Employer;
+import com.training.company.EmployerService;
 
 public class Application {
     public static void main(String[] args) {
-        Employer employer = new Employer();
-        employer.display();
+        Employee employee = new Employee(5,"Deba", true);
+        EmployerService employerService = new EmployerService(); //bc we need to calc the salary info
 
-        Employee employee = new Employee(5, "Deba", true);
+        Salary salary = new Salary();
+        salary.setBasicPay(6000);
 
-        System.out.println("==== Employee Details ====" +
-                "\nExperienceInYears: " + employee.getExperienceInYears() +
-                "\nName: " + employee.getName() +
-                "\nisRemoteWorking: " + employee.isRemoteWorking()
-        );
+        int finalPay = employerService.calculateSalary(salary); //uses the 1st method of calculateSalary
+        salary.setMonthlyPay(finalPay);
 
-        updateEmployee(employee); // calls the updateEmployee method
-    }
+        System.out.println("=== Employee Details ===" +
+                "\nmMonthly Pay: " + salary.getMonthlyPay());
 
-    private static void updateEmployee(Employee employee) { //updates employee info by setting new field info
-        employee.setExperienceInYears(10);
-        employee.setName("Sam");
-        employee.setRemoteWorking(false);
-
-        System.out.println("==== Updated Employee Details ====" +
-                "\nExperienceInYears: " + employee.getExperienceInYears() +
-                "\nName: " + employee.getName() +
-                "\nisRemoteWorking: " + employee.isRemoteWorking()
-        );
     }
 }

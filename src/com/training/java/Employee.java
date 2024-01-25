@@ -5,6 +5,7 @@ public class Employee {
     private int experienceInYears;
     private String name;
     private boolean remoteWorking;
+    private Salary salary;
 
     //getters and setters
 
@@ -28,11 +29,19 @@ public class Employee {
         return remoteWorking;
     }
 
-    // constructor
+    public Salary getSalary() {
+        return salary;
+    }
+
+    public void setSalary(Salary salary) {
+        this.salary = salary;
+    }
+
     public void setRemoteWorking(boolean remoteWorking) {
         this.remoteWorking = remoteWorking;
     }
 
+    // constructor
     public Employee(int experienceInYears, String name, boolean remoteWorking) {
         this.experienceInYears = experienceInYears;
         this.name = name;
