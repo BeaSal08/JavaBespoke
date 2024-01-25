@@ -37,6 +37,7 @@ public class CustomerService {
         int flatCashback = switch(customerType)
         {
             case GOLD,DIAMOND -> 1000;
+            //break; <-- if we want to get out of the switch case once a condition is met, we can use break
             default -> 500;
         };
 
