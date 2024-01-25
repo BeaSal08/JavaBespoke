@@ -29,6 +29,8 @@ public class Employee {
         return remoteWorking;
     }
 
+    int numberOfLeaves = 5;
+
     public Salary getSalary() {
         return salary;
     }
@@ -41,10 +43,27 @@ public class Employee {
         this.remoteWorking = remoteWorking;
     }
 
+    public int getNumberOfLeaves() {
+        return numberOfLeaves;
+    }
+
+    public void setNumberOfLeaves(int numberOfLeaves) {
+        this.numberOfLeaves = numberOfLeaves;
+    }
+
     // constructor
-    public Employee(int experienceInYears, String name, boolean remoteWorking) {
-        this.experienceInYears = experienceInYears;
-        this.name = name;
-        this.remoteWorking = remoteWorking;
+//    public Employee(int experienceInYears, String name, boolean remoteWorking) {
+//        this.experienceInYears = experienceInYears;
+//        this.name = name;
+//        this.remoteWorking = remoteWorking;
+//    }
+
+    public Employee() {
+        System.out.println("Employee is Created");
+    }
+
+    //method
+    void getDefaultLeaves(){
+        System.out.println("Number of Leaves for Employee: " + numberOfLeaves);
     }
 }

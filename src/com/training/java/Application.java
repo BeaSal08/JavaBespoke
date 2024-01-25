@@ -4,25 +4,63 @@ import com.training.company.Employer;
 import com.training.company.EmployerService;
 
 public class Application {
+
     public static void main(String[] args) {
-        Employee employee = new Employee(5,"Deba", true);
-        EmployerService employerService = new EmployerService(); //bc we need to calc the salary info
+        Employee employee = new Employee();
+        PeoplePerson peoplePerson = new PeoplePerson();
+        peoplePerson.setHiringBonus(800);
+        peoplePerson.setName("Sara");
+        peoplePerson.setExperienceInYears(6);
 
-        Salary salary = new Salary();
-        salary.setBasicPay(6000);
+        boolean allowedWFHPeoplePerson = isPermanentContract(TypeOfContract.CONTRACTUAL);
+        if (allowedWFHPeoplePerson)
+        {
+            peoplePerson.setRemoteWorking(true);
+        }
+        employee.getDefaultLeaves();
+        peoplePerson.getDefaultLeaves();
 
-        int finalPay = employerService.calculateSalary(salary); //uses the 1st method of calculateSalary
-        salary.setMonthlyPay(finalPay);
+        Programmer programmer = new Programmer();
+        programmer.setYearlyBonus(800);
+        programmer.setName("Kim");
+        programmer.setExperienceInYears(6);
 
-        System.out.println("=== Employee Details ===" +
-                "\nMonthly Pay: " + salary.getMonthlyPay());
+        boolean allowedWFHProgrammer = isPermanentContract(TypeOfContract.PERMANENT);
+        if (allowedWFHProgrammer)
+        {
+            programmer.setRemoteWorking(true);
+        }
+        employee.getDefaultLeaves();
+        programmer.getDefaultLeaves();
 
-        Employee employee2 = new Employee(5,"Deba", true);
-        Salary salary2 = employerService.calculateSalary(500, 500);
-        employee2.setSalary(salary2);
+        Admin admin = new Admin();
+        admin.setQuarterlyBonus(800);
+        admin.setName("Josh");
+        admin.setExperienceInYears(6);
 
-        System.out.println("=== Employee Details ===" +
-                "\nMonthly Pay: " + salary2.getMonthlyPay());
+        boolean allowedWFHAdmin = isPermanentContract(TypeOfContract.PERMANENT);
+        if (allowedWFHAdmin)
+        {
+            admin.setRemoteWorking(true);
+        }
+        employee.getDefaultLeaves();
+        admin.getDefaultLeaves();
 
     }
+
+    public static Boolean isPermanentContract(TypeOfContract typeOfContract) {
+        Boolean allowedWFH =
+                switch (typeOfContract) {
+                    case PERMANENT -> true;
+                    case CONTRACTUAL, FREELANCE -> false;
+                };
+        System.out.println("Work from Home allowed = " + allowedWFH);
+        return allowedWFH;
+    }
+
+    enum TypeOfContract {
+        PERMANENT, CONTRACTUAL, FREELANCE;
+    }
 }
+
+
