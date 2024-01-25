@@ -23,5 +23,13 @@ public class CustomerService {
         {
             System.out.println("Customer privileges are: locker, 1% cashback in all transactions, and a personal banker");
         }
+        else if ((creditRating >= 500) && (creditRating <= 700) && (isKycDone))
+        {
+            System.out.println("Customer privileges are: locker, 1% cashback in all transactions");
+        }
+        else
+        {
+            System.out.println("Customer privileges are: locker");
+        }
     }
 }
