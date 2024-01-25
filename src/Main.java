@@ -4,12 +4,6 @@ import com.test.app.CustomerService;
 
 public class Main {
     public static void main(String[] args) {
-//        // Wrapper Class converting primitive to wrapper class
-//        // why? bc yearOfBirth is int and not Integer so it doesnt have extra functions like .equals()
-//        int yearOfBirth = 2000;
-//        Integer yob = yearOfBirth;
-//        System.out.println("yob == 2000 ? : " +  yob.equals(2000));
-//
 //        // Instantiate a class to make an object
 //        Customer customer = new Customer(); // uses the default constructor bc we havent created a constructor in the customer class
 //
@@ -56,36 +50,6 @@ public class Main {
 //        System.out.println("==== Updated Car Details ====" +
 //                "\nAge: " + car.getName() +
 //                "\nphoneNumber: " + car.getYearOfMake()
-//        );
-
-//        // Operators in Java
-//        int x = 5;
-//        int z = 6;
-//        boolean y = false;
-//
-//        System.out.println("==== Arithmetic Operators ====" +
-//                "\nx: " + x + "\ny: " + y
-//        );
-//
-//        System.out.println("post increment x: " + x++);
-//        System.out.println("pre increment x: " + ++x);
-//
-//        System.out.println("post decrement x: " + x--);
-//        System.out.println("pre decrement x: " + --x);
-//
-//        System.out.println("not y: " + !y);
-//
-//        // Bitwise and Shift operators use bits
-//        System.out.println("==== Bitwise Operators ====" +
-//                "\nx (5): 0000 0101" + "\nz (6): 0000 0110"
-//        );
-//        System.out.println(x & z); //AND, results to 4 bc 0000 0100
-//        System.out.println(x | z); //OR, results to 7 bc 0000 0111 (hindi sya addition na OR)
-//
-//        // Assignment Operators
-//        z += 10;
-//        System.out.println("==== Assignment Operators ====" +
-//                "\nz (before assign) = 6" + "\nz (aft assign): " + z
 //        );
 
         // Polymorphism - Overloading
