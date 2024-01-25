@@ -19,12 +19,7 @@ public class Main {
         //FOR LOOPS
         String customers[] = {"Deba", "Sam", "Yasmin"};
 
-//        for (int i = 0; i < customers.length; i++)
-//        {
-//            System.out.println("Customer applied for loan: " + customers[i]);
-//        }
-
-        for (String customer : customers) {
+        for (String customer : customers) { //customer not important, can be abc or other tbh
             System.out.println("Customer applied for loan: " + customer);
         }
     }
