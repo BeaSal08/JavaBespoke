@@ -32,7 +32,6 @@ public class CustomerService {
             System.out.println("Customer privileges are: locker");
         }
     }
-
     public int calculateFlatCashback(CustomerType customerType){
         int flatCashback = switch(customerType)
         {
@@ -42,5 +41,45 @@ public class CustomerService {
         };
 
         return  flatCashback;
+    }
+    public String openBankAccount(Customer customer)
+    {
+        String bankAccountOpened = null;
+        if(customer.getBankAccountType() != null)
+        {
+            if(customer.getBankAccountType().equals("Saving"))
+            {
+                if(customer.getInitialAccountBalance() >= 3000)
+                {
+                    System.out.println("Savings bank account opened for customer");
+                    addPrivilege(customer.getCreditRating(), customer.isKycDone());
+                    int flatCashBack = calculateFlatCashback(customer.getCustomerType());
+                    bankAccountOpened = "Yes";
+                }
+                else
+                {
+                    System.out.println("3000 is the minimum required balance for Savings bank account");
+                    bankAccountOpened = "No";
+                }
+            }
+            else if(customer.getBankAccountType().equals("Investment"))
+            {
+                if((customer.getInitialAccountBalance() >= 10000)
+                        && (customer.getCreditRating() >= 500)
+                        && (customer.getAge() >= 21))
+                {
+                    System.out.println("Investment bank account opened for customer");
+                    addPrivilege(customer.getCreditRating(), customer.isKycDone());
+                    int flatCashBack = calculateFlatCashback(customer.getCustomerType());
+                    bankAccountOpened = "Yes";
+                }
+                else
+                {
+                    System.out.println("10000 is the minimum required balance for Investment bank account");
+                    bankAccountOpened = "No";
+                }
+            }
+        }
+        return bankAccountOpened;
     }
 }

@@ -12,6 +12,9 @@ public class Customer {
 
     private Loan loan;
 
+    private String customerId;
+    private CustomerType customerType;
+
     //constructor:
     public Customer() {
         System.out.println("A customer is created");
@@ -95,5 +98,21 @@ public class Customer {
 
     public void setLoan(Loan loan) {
         this.loan = loan;
+    }
+
+    public String getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
+    }
+
+    public CustomerType getCustomerType() {
+        return customerType;
+    }
+
+    public void setCustomerType(CustomerType customerType) {
+        this.customerType = customerType;
     }
 }
