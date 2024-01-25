@@ -1,5 +1,6 @@
 import com.test.app.Car;
 import com.test.app.Customer;
+import com.test.app.CustomerService;
 
 public class Main {
     public static void main(String[] args) {
@@ -87,41 +88,32 @@ public class Main {
 //                "\nz (before assign) = 6" + "\nz (aft assign): " + z
 //        );
 
-        // Relational Operators
-        System.out.println("==== Relational Operators ====");
+        // Polymorphism - Overloading
         Customer customer = new Customer(); // Creates a customer object whose fields are set
 
         customer.setAge(30);
         customer.setName("Deba");
         customer.setPhoneNumber(454545);
-        customer.setKycDone(false);
+        customer.setKycDone(true);
         customer.setBankAccountType("Saving");
         customer.setAreaCode('W');
-        customer.setCreditRating(700);
+        customer.setCreditRating(800);
 
-        // Ternary Operators, syntax: dataType varName = condition ? trueResult : falseResult
-//        System.out.println("==== Ternary Operators ====");
-//        boolean eligibility = customer.getCreditRating() >= 500 ? true : false;
-//        System.out.println("Eligibility = " + eligibility);
+        // Initialize customer service so you can use it's functions
+        // this will show you 2 diff options for addPrivilege bc of overloading we did in CustomerService.java
+        CustomerService customerService = new CustomerService();
+//        customerService.addPrivilege(customer.getCreditRating());
+        customerService.addPrivilege(customer.getCreditRating(), customer.isKycDone());
 
-        // Verifies what type stuff the customer is eligible for based on their credentials
-        //AND
-        if (customer.getAge() >= 21 && customer.getCreditRating() >= 500 && customer.isKycDone()) {
-            System.out.println("Customer is eligible to open a bank account without verification");
-        }
-        //OR
-        if(customer.getCreditRating() >= 500 || customer.isKycDone())
-        {
-            System.out.println("Customer is eligible to open a bank account with verification");
-        }
-        if(customer.getCreditRating() == 700)
-        {
-            System.out.println("Customer is eligible for locker facilities");
-        }
-        else
-        {
-            System.out.println("Customer is not eligible for any loan or credit card");
-        }
+        Customer customer1 = new Customer();
+
+        customer1.setAge(30);
+        customer1.setName("Sam");
+        customer1.setPhoneNumber(454545);
+        customer1.setBankAccountType("Saving");
+        customer1.setAreaCode('W');
+        customer1.setCreditRating(700);
+        customerService.addPrivilege(customer1.getCreditRating());
 
     }
 }

@@ -1,7 +1,7 @@
 package com.test.app;
 
 // EXAMPLE FOR POLYMORPHISM OVERLOADING
-// overloading: same method, diff params
+// overloading: same method, diff params, same class
 // I guess you can say it's good for when you want to use the same func name but it has diff functionalities
 // based on the available parameters. Makes it less confusing to use I guess?
 public class CustomerService {
