@@ -2,34 +2,20 @@ import com.test.app.*;
 
 public class Main {
     public static void main(String[] args) {
-        // Polymorphism - Overriding and Inheritance
-        //PARENT:
-        Customer customer = new Customer();
-        customer.getDefaultPrivileges();
+        // Arrays
+        // 1D
+        String branchNames[] = {"Manila", "Paris", "Mumbai"};
+        System.out.println("1st branch, index 0: " + branchNames[0]);
 
-        //CHILD:
-        GoldCustomer goldCustomer = new GoldCustomer();
-        //Inherited properties
-        goldCustomer.setAge(34);
-        goldCustomer.setName("Chris");
-        goldCustomer.setKycDone(false);
-        goldCustomer.setCreditRating(344);
-        goldCustomer.setInitialAccountBalance(10000);
+        // Multi-D, array of arrays
+        int marks[][] = {
+                {77, 85, 68, 99, 87},
+                {98, 56, 79, 90, 92},
+                {78, 88, 56, 70, 99}
+        };
 
-        //own property
-        goldCustomer.setCustomerPrivilege("Gold");
-        goldCustomer.setCustomerType(CustomerType.GOLD.name()); //to get string, use .name()
-        goldCustomer.getDefaultPrivileges(); //<--- call overriding method, call from our child class
+        int result[][] = new int[3][5];
+        System.out.println("marks[1][2]: " + marks[1][2]); //gets 2nd row, 3rd col = 79
 
-        CustomerService customerService = new CustomerService();
-        int flatCashback = customerService.calculateFlatCashback(CustomerType.GOLD);
-
-        System.out.println("=== Gold Customer Details ===" +
-        "\nPrivileges: " + goldCustomer.getCustomerPrivilege() +
-        "\nName: " + goldCustomer.getName() +
-        "\nInitial Account Balance: " + goldCustomer.getInitialAccountBalance() +
-        "\nCustomer Type: " + goldCustomer.getCustomerType() +
-                        "\nFlat Cashback: " + flatCashback
-        );
     }
 }
