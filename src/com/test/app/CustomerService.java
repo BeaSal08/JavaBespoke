@@ -1,6 +1,7 @@
 package com.test.app;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 // EXAMPLE FOR POLYMORPHISM OVERLOADING
 // overloading: same method, diff params, same class
@@ -58,7 +59,8 @@ public class CustomerService {
         customer1.setCustomerId("BANK1000");
         customer1.setBankAccountType("Saving");
         customer1.setCreditRating(400);
-        customer1.setInitialAccountBalance(8000);
+        customer1.setInitialAccountBalance(9000);
+        customer1.setAddress("1 Manila Road, Manila");
         customer1.setCustomerType(CustomerType.PLATINUM);
 
         //Second customer
@@ -69,6 +71,7 @@ public class CustomerService {
         customer2.setBankAccountType("Saving");
         customer2.setCreditRating(400);
         customer2.setInitialAccountBalance(1000);
+        customer2.setAddress("2 Mumbai Street, Mumbai");
         customer2.setCustomerType(CustomerType.SILVER);
 
         //Third customer
@@ -79,6 +82,7 @@ public class CustomerService {
         customer3.setBankAccountType("Investment");
         customer3.setCreditRating(900);
         customer3.setInitialAccountBalance(18000);
+        customer3.setAddress("3 Paris Street, Paris Road");
         customer3.setCustomerType(CustomerType.DIAMOND);
 
         //add customers to arraylist
@@ -94,6 +98,9 @@ public class CustomerService {
     // 2. use list to loop through for bank acc creation
     public void openBankAccount(ArrayList<Customer> customers)
     {
+        HashMap<String,String> welcomeKitMap = sendWelcomeKit(customers);
+
+
         for(Customer customer : customers )
         {
         if(customer.getBankAccountType() != null)
@@ -105,6 +112,12 @@ public class CustomerService {
                     System.out.println("Savings bank account opened for customer: " + customer.getName() );
                     addPrivilege(customer.getCreditRating(), customer.isKycDone());
                     int flatCashBack = calculateFlatCashback(customer.getCustomerType());
+
+                    if(welcomeKitMap.containsKey(customer.getCustomerId()) && (customer.initialAccountBalance > 8000))
+                    {
+                        System.out.println("Welcome kit sent: ATM Card, bank booklet, bank logo stickers to address: " +
+                                welcomeKitMap.get(customer.getCustomerId()));
+                    }
                 }
                 else
                 {
@@ -128,5 +141,20 @@ public class CustomerService {
             }
         }
         }
+    }
+
+    public HashMap<String,String> sendWelcomeKit(ArrayList<Customer> customers)
+    {
+
+        HashMap<String,String> welcomeKitMap = new HashMap<>();
+        //loop through customers
+        for (Customer customer : customers)
+        {
+            welcomeKitMap.put(customer.getCustomerId(), customer.getAddress()); // (key,value)
+        }
+
+        //check if the customers bank balance is beyond a certain limit, send a welcome kit
+
+        return welcomeKitMap;
     }
 }

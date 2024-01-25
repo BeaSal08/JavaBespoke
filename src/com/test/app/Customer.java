@@ -15,6 +15,8 @@ public class Customer {
     private String customerId;
     private CustomerType customerType;
 
+    private String address;
+
     //constructor:
     public Customer() {
         System.out.println("A customer is created");
@@ -114,5 +116,13 @@ public class Customer {
 
     public void setCustomerType(CustomerType customerType) {
         this.customerType = customerType;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }
