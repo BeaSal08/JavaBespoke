@@ -8,10 +8,9 @@ public class Customer {
     private String name;
     private int creditRating;
     private String bankAccountType;
-
-
-
     int initialAccountBalance = 2000;
+
+    private Loan loan;
 
     //constructor:
     public Customer() {
@@ -80,5 +79,21 @@ public class Customer {
 
     public void setBankAccountType(String bankAccountType) {
         this.bankAccountType = bankAccountType;
+    }
+
+    public int getInitialAccountBalance() {
+        return initialAccountBalance;
+    }
+
+    public void setInitialAccountBalance(int initialAccountBalance) {
+        this.initialAccountBalance = initialAccountBalance;
+    }
+
+    public Loan getLoan() {
+        return loan;
+    }
+
+    public void setLoan(Loan loan) {
+        this.loan = loan;
     }
 }

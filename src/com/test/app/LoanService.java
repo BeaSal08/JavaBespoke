@@ -6,7 +6,7 @@ abstract class LoanService {
 
     //abstract methods cannot have any body
     abstract void applyLoan(Customer customer);
-    abstract void calculateLoanCap(LoanTypes loanTypes);
+    abstract int calculateLoanCap(LoanTypes loanTypes);
     void verifyApplicant() //non abstract
     {
         System.out.println("Applicant verification for loan started");
