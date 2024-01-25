@@ -94,14 +94,24 @@ public class Main {
         customer.setAge(30);
         customer.setName("Deba");
         customer.setPhoneNumber(454545);
-        customer.setKycDone(true);
+        customer.setKycDone(false);
         customer.setAreaCode('W');
-        customer.setCreditRating(700);
+        customer.setCreditRating(200);
 
+        //AND
         if (customer.getAge() >= 21 && customer.getCreditRating() >= 500 && customer.isKycDone()) {
             System.out.println("Customer is eligible to open a bank account without verification");
         }
-        if (customer.getCreditRating() < 500) {
+        //OR
+        if(customer.getCreditRating() >= 500 || customer.isKycDone())
+        {
+            System.out.println("Customer is eligible to open a bank account with verification");
+        }
+//        if (customer.getCreditRating() <= 500) {
+//            System.out.println("Customer is not eligible for any loan or credit card");
+//        }
+        else
+        {
             System.out.println("Customer is not eligible for any loan or credit card");
         }
 
