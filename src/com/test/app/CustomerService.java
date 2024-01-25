@@ -1,5 +1,7 @@
 package com.test.app;
 
+import java.util.ArrayList;
+
 // EXAMPLE FOR POLYMORPHISM OVERLOADING
 // overloading: same method, diff params, same class
 // I guess you can say it's good for when you want to use the same func name but it has diff functionalities
@@ -42,24 +44,71 @@ public class CustomerService {
 
         return  flatCashback;
     }
-    public String openBankAccount(Customer customer)
+
+    //Lists
+    //Idea: whenever there is a new customer, we add them to the list
+    // 1. create list of customers
+    public ArrayList<Customer> createCustomerList()
     {
-        String bankAccountOpened = null;
+        //First customer
+        ArrayList<Customer> customers = new ArrayList<>(); //List of Customers
+        Customer customer1 = new Customer();
+        customer1.setAge(32);
+        customer1.setName("Don");
+        customer1.setCustomerId("BANK1000");
+        customer1.setBankAccountType("Saving");
+        customer1.setCreditRating(400);
+        customer1.setInitialAccountBalance(8000);
+        customer1.setCustomerType(CustomerType.PLATINUM);
+
+        //Second customer
+        Customer customer2 = new Customer();
+        customer2.setAge(37);
+        customer2.setName("Sara");
+        customer2.setCustomerId("BANK1001");
+        customer2.setBankAccountType("Saving");
+        customer2.setCreditRating(400);
+        customer2.setInitialAccountBalance(1000);
+        customer2.setCustomerType(CustomerType.SILVER);
+
+        //Third customer
+        Customer customer3 = new Customer();
+        customer3.setAge(22);
+        customer3.setName("Mark");
+        customer3.setCustomerId("BANK1002");
+        customer3.setBankAccountType("Investment");
+        customer3.setCreditRating(900);
+        customer3.setInitialAccountBalance(18000);
+        customer3.setCustomerType(CustomerType.DIAMOND);
+
+        //add customers to arraylist
+        customers.add(customer1);
+        customers.add(customer2);
+        customers.add(customer3);
+
+        System.out.println("Number of customers: " + customers.size());
+        return customers;
+    }
+
+
+    // 2. use list to loop through for bank acc creation
+    public void openBankAccount(ArrayList<Customer> customers)
+    {
+        for(Customer customer : customers )
+        {
         if(customer.getBankAccountType() != null)
         {
             if(customer.getBankAccountType().equals("Saving"))
             {
                 if(customer.getInitialAccountBalance() >= 3000)
                 {
-                    System.out.println("Savings bank account opened for customer");
+                    System.out.println("Savings bank account opened for customer: " + customer.getName() );
                     addPrivilege(customer.getCreditRating(), customer.isKycDone());
                     int flatCashBack = calculateFlatCashback(customer.getCustomerType());
-                    bankAccountOpened = "Yes";
                 }
                 else
                 {
                     System.out.println("3000 is the minimum required balance for Savings bank account");
-                    bankAccountOpened = "No";
                 }
             }
             else if(customer.getBankAccountType().equals("Investment"))
@@ -68,18 +117,16 @@ public class CustomerService {
                         && (customer.getCreditRating() >= 500)
                         && (customer.getAge() >= 21))
                 {
-                    System.out.println("Investment bank account opened for customer");
+                    System.out.println("Investment bank account opened for customer: " + customer.getName());
                     addPrivilege(customer.getCreditRating(), customer.isKycDone());
                     int flatCashBack = calculateFlatCashback(customer.getCustomerType());
-                    bankAccountOpened = "Yes";
                 }
                 else
                 {
                     System.out.println("10000 is the minimum required balance for Investment bank account");
-                    bankAccountOpened = "No";
                 }
             }
         }
-        return bankAccountOpened;
+        }
     }
 }

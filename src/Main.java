@@ -5,33 +5,13 @@ import com.training.company.TypeOfEmployee;
 import com.training.java.Employee;
 import com.training.java.Salary;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
-//        Customer customer = new Customer();
-//        customer.setName("Deba");
-//        customer.setAge(31);
-//        customer.setCreditRating(800);
-//        customer.setBankAccountType("Saving");
-//
-//        Loan loan = new Loan();
-//        loan.setLoanAmount(20000);
-//        loan.setLoanTypes(LoanTypes.HOME);
-//        customer.setLoan(loan);
-//
-//        HomeLoanService homeLoanService = new HomeLoanService();
-//        homeLoanService.applyLoan(customer);
+        CustomerService customerService = new CustomerService();
+        ArrayList<Customer> customers = customerService.createCustomerList();
+        customerService.openBankAccount(customers);
 
-        Employee employee = new Employee();
-        EmployerService employerService = new EmployerService();
-        Salary salary = employerService.calculateSalary(500, 500);
-        employee.setSalary(salary);
-        employee.setName("Sara");
-        employee.setExperienceInYears(6);
-        employee.setTypeOfEmployee(TypeOfEmployee.PEOPLEPERSON);
-
-        EmploymentService employmentService = new EmploymentService();
-        employmentService.attendTraining(employee);
-        employmentService.signEmploymentDocuments(employee);
-        employmentService.receiveLaptop(employee.getTypeOfEmployee());
     }
 }
