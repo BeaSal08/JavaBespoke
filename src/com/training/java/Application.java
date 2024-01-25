@@ -1,32 +1,66 @@
 package com.training.java;
 
 import com.training.company.Employer;
+import com.training.company.EmployerService;
 
 public class Application {
+
     public static void main(String[] args) {
-        Employer employer = new Employer();
-        employer.display();
+        Employee employee = new Employee();
+        PeoplePerson peoplePerson = new PeoplePerson();
+        peoplePerson.setHiringBonus(800);
+        peoplePerson.setName("Sara");
+        peoplePerson.setExperienceInYears(6);
 
-        Employee employee = new Employee(5, "Deba", true);
+        boolean allowedWFHPeoplePerson = isPermanentContract(TypeOfContract.CONTRACTUAL);
+        if (allowedWFHPeoplePerson)
+        {
+            peoplePerson.setRemoteWorking(true);
+        }
+        employee.getDefaultLeaves();
+        peoplePerson.getDefaultLeaves();
 
-        System.out.println("==== Employee Details ====" +
-                "\nExperienceInYears: " + employee.getExperienceInYears() +
-                "\nName: " + employee.getName() +
-                "\nisRemoteWorking: " + employee.isRemoteWorking()
-        );
+        Programmer programmer = new Programmer();
+        programmer.setYearlyBonus(800);
+        programmer.setName("Kim");
+        programmer.setExperienceInYears(6);
 
-        updateEmployee(employee);
+        boolean allowedWFHProgrammer = isPermanentContract(TypeOfContract.PERMANENT);
+        if (allowedWFHProgrammer)
+        {
+            programmer.setRemoteWorking(true);
+        }
+        employee.getDefaultLeaves();
+        programmer.getDefaultLeaves();
+
+        Admin admin = new Admin();
+        admin.setQuarterlyBonus(800);
+        admin.setName("Josh");
+        admin.setExperienceInYears(6);
+
+        boolean allowedWFHAdmin = isPermanentContract(TypeOfContract.PERMANENT);
+        if (allowedWFHAdmin)
+        {
+            admin.setRemoteWorking(true);
+        }
+        employee.getDefaultLeaves();
+        admin.getDefaultLeaves();
+
     }
 
-    private static void updateEmployee(Employee employee) {
-        employee.setExperienceInYears(10);
-        employee.setName("Sam");
-        employee.setRemoteWorking(false);
+    public static Boolean isPermanentContract(TypeOfContract typeOfContract) {
+        Boolean allowedWFH =
+                switch (typeOfContract) {
+                    case PERMANENT -> true;
+                    case CONTRACTUAL, FREELANCE -> false;
+                };
+        System.out.println("Work from Home allowed = " + allowedWFH);
+        return allowedWFH;
+    }
 
-        System.out.println("==== Updated Employee Details ====" +
-                "\nExperienceInYears: " + employee.getExperienceInYears() +
-                "\nName: " + employee.getName() +
-                "\nisRemoteWorking: " + employee.isRemoteWorking()
-        );
+    enum TypeOfContract {
+        PERMANENT, CONTRACTUAL, FREELANCE;
     }
 }
+
+
