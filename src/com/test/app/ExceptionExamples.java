@@ -43,8 +43,7 @@ public class ExceptionExamples {
             pw = new PrintWriter("abc.txt");
         } catch(FileNotFoundException e)
         {
-            System.out.println("Exception occured "+e);
-
+            System.out.println("Exception occurred "+e);
         }
     }
 
