@@ -65,7 +65,7 @@ public class EmploymentService implements Employment{
         job1.setJobId("ABC100");
         job1.setJobPostingDate(LocalDate.of(2024,1,13));
         job1.setJobClosureDate(LocalDate.of(2024,2,24));
-        job1.setJobDescription("This is not 20 chars long");
+        job1.setJobDescription("This is 20 chars long so this should be counted as ok validated");
 
         //valid
         Job job2 = new Job();
@@ -77,7 +77,7 @@ public class EmploymentService implements Employment{
         job2.setJobId("ABC102");
         job2.setJobPostingDate(LocalDate.of(2024,2,13));
         job2.setJobClosureDate(LocalDate.of(2024,3,24));
-        job2.setJobDescription("This is 20 characters long so this should pass the validation");
+        job2.setJobDescription("This is 20 chars long so this should be counted as ok validated");
 
         Job job3 = new Job();
         job3.setJobName("FullStack Engineer");
@@ -86,9 +86,9 @@ public class EmploymentService implements Employment{
         job3.setMinSalary(7000);
         job3.setMaxSalary(12000);
         job3.setJobId("ABC101");
-        job2.setJobPostingDate(LocalDate.of(2024,2,13));
-        job2.setJobClosureDate(LocalDate.of(2023,3,24));
-        job2.setJobDescription("This is not 20 chars long");
+        job3.setJobPostingDate(LocalDate.of(2024,2,13));
+        job3.setJobClosureDate(LocalDate.of(2024,3,24));
+        job3.setJobDescription("short desc");
 
         jobs.add(job1);
         jobs.add(job2);

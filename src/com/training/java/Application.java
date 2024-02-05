@@ -9,17 +9,17 @@ public class Application {
 
     public static void main(String[] args) {
         //Employee #1
-        Employee employee = new Employee();
-        EmployerService employerService = new EmployerService();
-
-        Salary salary = employerService.calculateSalary(1000, 1000);
-        employee.setSalary(salary);
-        employee.setName("Sara");
-        employee.setExperienceInYears(6);
-        employee.setTypeOfEmployee(TypeOfEmployee.PEOPLEPERSON);
-
-        EmploymentService employmentService = new EmploymentService();
-        employmentService.fillJobs(employee);
+//        Employee employee = new Employee();
+//        EmployerService employerService = new EmployerService();
+//
+//        Salary salary = employerService.calculateSalary(1000, 1000);
+//        employee.setSalary(salary);
+//        employee.setName("Sara");
+//        employee.setExperienceInYears(6);
+//        employee.setTypeOfEmployee(TypeOfEmployee.PEOPLEPERSON);
+//
+//        EmploymentService employmentService = new EmploymentService();
+//        employmentService.fillJobs(employee);
 
         // Employee #2
         Employee employee2 = new Employee();
