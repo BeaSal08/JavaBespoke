@@ -76,7 +76,5 @@ public class Main {
 
         System.out.println("Parsed weddingDate = " + date); //result: Wed Apr 10 00:00:00 SGT 2019
 
-
-
     }
 }
