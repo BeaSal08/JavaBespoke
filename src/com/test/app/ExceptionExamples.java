@@ -3,6 +3,7 @@ package com.test.app;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 
+// these are all runtime exceptions
 public class ExceptionExamples {
 
     public void checkArithmeticException() {
