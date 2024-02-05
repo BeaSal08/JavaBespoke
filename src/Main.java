@@ -35,7 +35,7 @@ public class Main {
             System.out.println("Contains the char sequence");
         }
 
-        //Splitting
+        //Splitting, note: limit is optional
         String str = "geekss@for@geekss";
         String[] arrOfStr = str.split("@", 2); // pag 3, 3 times nya isplisplit based on "@"
 
