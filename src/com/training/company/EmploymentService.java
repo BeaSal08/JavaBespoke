@@ -65,7 +65,7 @@ public class EmploymentService implements Employment{
         job1.setJobId("ABC100");
         job1.setJobPostingDate(LocalDate.of(2024,1,13));
         job1.setJobClosureDate(LocalDate.of(2024,2,24));
-        job1.setJobDescription("This is 20 characters long so this should pass the validation");
+        job1.setJobDescription("This is not 20 chars long");
 
         //valid
         Job job2 = new Job();
@@ -114,21 +114,30 @@ public class EmploymentService implements Employment{
     public void fillJobs(Employee employee)
     {
         HashMap<String,Object> jobMap = new HashMap<>();
+        HashMap<String,Object> jobApplicationMap = new HashMap<>();
+        String employeeId = employee.getName() + employee.getDob();
         ArrayList<Job> jobs = createJobListing();
 
         for (Job job:jobs)
         {
-            jobMap.put(job.getJobId(),job.getJobName());
+            jobMap.put(job.getJobId(),job.getTypeOfEmployee());
         }
 
-        if(employee.getTypeOfEmployee().equals(TypeOfEmployee.PEOPLEPERSON))
-        {
-            System.out.println("You are eligible to apply for the job: " + jobMap.get("ABC100"));
-        }
-        else if(employee.getTypeOfEmployee().equals(TypeOfEmployee.PROGRAMMER))
-        {
-            System.out.println("You are eligible to apply for the job: " + jobMap.get("ABC101") + " and " + jobMap.get("ABC102"));
-        }
+        jobMap.forEach((jobId, jobName) -> {
+            if((jobMap.get(jobId).equals(TypeOfEmployee.PEOPLEPERSON)) &&
+                    (employee.getTypeOfEmployee().equals(TypeOfEmployee.PEOPLEPERSON)))
+            {
+                System.out.println("You are eligible to apply for the job = "+ jobId);
+                jobApplicationMap.put(employeeId, jobId);
+            }
+            else if((jobMap.get(jobId).equals(TypeOfEmployee.PROGRAMMER)) &&
+                    (employee.getTypeOfEmployee().equals(TypeOfEmployee.PROGRAMMER)))
+            {
+                System.out.println("You are eligible to apply for the job = "+ jobId);
+                jobApplicationMap.put(employeeId, jobId);
+            }
+        });
+        System.out.println("Created job application map = " + jobApplicationMap.size());
     }
 
     public Boolean validateJobListing(Job job)

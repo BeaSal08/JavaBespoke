@@ -23,7 +23,11 @@ public class Employee {
         this.experienceInYears = experienceInYears;
     }
 
-    protected String getName() {
+//    protected String getName() {
+//        return name;
+//    }
+
+    public String getName() {
         return name;
     }
 
