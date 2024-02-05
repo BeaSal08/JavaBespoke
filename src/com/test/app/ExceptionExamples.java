@@ -14,7 +14,7 @@ public class ExceptionExamples {
         }
     }
 
-    //Only one catch block gets executed
+    //Only one catch block gets executed even though 2 yung "satisfied" error due to line 22
     public void checkArrayIndexOOBException() {
         try {
             int a[] = {1,2,3};
