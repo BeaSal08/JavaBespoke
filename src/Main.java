@@ -28,10 +28,11 @@ public class Main {
         System.out.println("Substring at index 6 = " + ss1);
 
         String ss2 = s2.substring(8);
+        System.out.println("is ss1 equal to ss2? " + ss1.equals(ss2));
 
-        if (ss1.equals(ss2))
+        if (s1.contains("Hel"))
         {
-            System.out.println("OK: substring 1 and Substring 2 = World");
+            System.out.println("Contains the char sequence");
         }
 
     }
