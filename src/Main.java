@@ -23,5 +23,16 @@ public class Main {
         System.out.println("s3 = " + s3);
         System.out.println("s4 = " + s4);
 
+        //Substring - gets part of a string
+        String ss1 = s1.substring(6);
+        System.out.println("Substring at index 6 = " + ss1);
+
+        String ss2 = s2.substring(8);
+
+        if (ss1.equals(ss2))
+        {
+            System.out.println("OK: substring 1 and Substring 2 = World");
+        }
+
     }
 }
