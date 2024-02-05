@@ -5,12 +5,15 @@ import com.training.company.TypeOfEmployee;
 import com.training.java.Employee;
 import com.training.java.Salary;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
 //        String s1 = "Hello World";
 //        String s2 = "Goodbye World";
 //
@@ -49,6 +52,7 @@ public class Main {
 //        System.out.println("The last 4 digits are: " + arrOfStr2[2]);
 
         // Date operations
+        // Parse API
         String dob = "1995-12-12"; //should be in format of ISO_LOCAL_DATE or ISO_LOCAL_DATE_TIME for it to be parseable
         LocalDate dobConverted = LocalDate.parse(dob);
         System.out.println("dobConverted = " + dobConverted); //this is now a localDate
@@ -64,9 +68,13 @@ public class Main {
             System.out.println("You are registered successfully!");
         }
 
-//        LocalDateTime dobConvertedTime = LocalDateTime.parse(dob);
-//        System.out.println("dobConvertedTime = " + dobConvertedTime);
+        // Simple Date Format
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MMM-yyyy");
 
+        String weddingDate = "10-Apr-2019";
+        Date date = sdf.parse(weddingDate);
+
+        System.out.println("Parsed weddingDate = " + date); //result: Wed Apr 10 00:00:00 SGT 2019
 
 
 
