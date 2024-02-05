@@ -6,13 +6,15 @@ import java.io.PrintWriter;
 public class ExceptionExamples {
 
     public void checkArithmeticException() {
-        try {
-            int a = 100 / 0; //not possible
-        } catch(ArithmeticException e)
-        {
-            System.out.println("Exception Message: " + e);
+//        try {
+//            int a = 100 / 0; //not possible
+//        } catch(ArithmeticException e)
+//        {
+//            System.out.println("Exception Message: " + e);
+//
+//        }
 
-        }
+        int a = 100 / 0;
     }
 
     //Only one catch block gets executed
