@@ -48,5 +48,8 @@ public class Main {
         for (String a : arrOfStr2)
             System.out.println(a);
 
+        System.out.println("The last 4 digits are: " + arrOfStr2[2]);
+
+
     }
 }
