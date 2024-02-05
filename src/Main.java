@@ -42,5 +42,11 @@ public class Main {
         for (String a : arrOfStr)
             System.out.println(a);
 
+        String str2 = "014-222-1989";
+        String[] arrOfStr2 = str2.split("-", 4); // pag sobra, basta kung ilan lang
+
+        for (String a : arrOfStr2)
+            System.out.println(a);
+
     }
 }
