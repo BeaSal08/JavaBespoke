@@ -1,6 +1,6 @@
 package com.test.app;
 
-public class LoanException extends RuntimeException {
+public class LoanException extends RuntimeException { //RuntimeException is built in
 
     private String loanType;
 
