@@ -11,6 +11,8 @@ public class Employee {
 
     private TypeOfEmployee typeOfEmployee;
 
+    private String dob;
+
     //getters and setters
 
     protected int getExperienceInYears() {
@@ -21,7 +23,11 @@ public class Employee {
         this.experienceInYears = experienceInYears;
     }
 
-    protected String getName() {
+//    protected String getName() {
+//        return name;
+//    }
+
+    public String getName() {
         return name;
     }
 
@@ -61,6 +67,14 @@ public class Employee {
 
     public void setTypeOfEmployee(TypeOfEmployee typeOfEmployee) {
         this.typeOfEmployee = typeOfEmployee;
+    }
+
+    public String getDob() {
+        return dob;
+    }
+
+    public void setDob(String dob) {
+        this.dob = dob;
     }
 
     // constructor

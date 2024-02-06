@@ -3,6 +3,7 @@ package com.training.company;
 import com.training.java.Employee;
 
 import javax.print.attribute.standard.JobName;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -54,6 +55,7 @@ public class EmploymentService implements Employment{
     {
         ArrayList<Job> jobs = new ArrayList<>();
 
+        //valid
         Job job1 = new Job();
         job1.setJobName("People Connect Specialist");
         job1.setTypeOfEmployee(TypeOfEmployee.PEOPLEPERSON);
@@ -61,7 +63,11 @@ public class EmploymentService implements Employment{
         job1.setMinSalary(5000);
         job1.setMaxSalary(10000);
         job1.setJobId("ABC100");
+        job1.setJobPostingDate(LocalDate.of(2024,1,13));
+        job1.setJobClosureDate(LocalDate.of(2024,2,24));
+        job1.setJobDescription("This is 20 chars long so this should be counted as ok validated");
 
+        //valid
         Job job2 = new Job();
         job2.setJobName("DevOps Engineer");
         job2.setTypeOfEmployee(TypeOfEmployee.PROGRAMMER);
@@ -69,6 +75,9 @@ public class EmploymentService implements Employment{
         job2.setMinSalary(8000);
         job2.setMaxSalary(15000);
         job2.setJobId("ABC102");
+        job2.setJobPostingDate(LocalDate.of(2024,2,13));
+        job2.setJobClosureDate(LocalDate.of(2024,3,24));
+        job2.setJobDescription("This is 20 chars long so this should be counted as ok validated");
 
         Job job3 = new Job();
         job3.setJobName("FullStack Engineer");
@@ -77,32 +86,118 @@ public class EmploymentService implements Employment{
         job3.setMinSalary(7000);
         job3.setMaxSalary(12000);
         job3.setJobId("ABC101");
+        job3.setJobPostingDate(LocalDate.of(2024,2,13));
+        job3.setJobClosureDate(LocalDate.of(2024,3,24));
+        job3.setJobDescription("short desc");
 
         jobs.add(job1);
         jobs.add(job2);
         jobs.add(job3);
 
-        System.out.println("Length of List: " + jobs.size());
-        return jobs;
+//        System.out.println("Length of List: " + jobs.size());
+//        return jobs;
+
+        ArrayList<Job> validJobList = new ArrayList<>();
+
+        for (Job job : jobs)
+        {
+            Boolean validJob = validateJobListing(job);
+            if(validJob.equals(true))
+            {
+                validJobList.add(job);
+            }
+        }
+        System.out.println("Length of List: " + validJobList.size());
+        return validJobList;
     }
 
     public void fillJobs(Employee employee)
     {
         HashMap<String,Object> jobMap = new HashMap<>();
+        HashMap<String,Object> jobApplicationMap = new HashMap<>();
+        String employeeId = employee.getName() + employee.getDob();
         ArrayList<Job> jobs = createJobListing();
 
         for (Job job:jobs)
         {
-            jobMap.put(job.getJobId(),job.getJobName());
+            jobMap.put(job.getJobId(),job.getTypeOfEmployee());
         }
 
-        if(employee.getTypeOfEmployee().equals(TypeOfEmployee.PEOPLEPERSON))
+        jobMap.forEach((jobId, jobName) -> {
+            if((jobMap.get(jobId).equals(TypeOfEmployee.PEOPLEPERSON)) &&
+                    (employee.getTypeOfEmployee().equals(TypeOfEmployee.PEOPLEPERSON)))
+            {
+                System.out.println("You are eligible to apply for the job = "+ jobId);
+                jobApplicationMap.put(employeeId, jobId);
+            }
+            else if((jobMap.get(jobId).equals(TypeOfEmployee.PROGRAMMER)) &&
+                    (employee.getTypeOfEmployee().equals(TypeOfEmployee.PROGRAMMER)))
+            {
+                System.out.println("You are eligible to apply for the job = "+ jobId);
+                jobApplicationMap.put(employeeId, jobId);
+            }
+        });
+        System.out.println("Created job application map = " + jobApplicationMap.size());
+    }
+
+    public Boolean validateJobListing(Job job)
+    {
+        LocalDate date = LocalDate.now();
+        boolean validJob = true;
+
+        if((job.getJobClosureDate() != null) && (job.getJobPostingDate() != null))
         {
-            System.out.println("You are eligible to apply for the job: " + jobMap.get("ABC100"));
+            if((job.getJobClosureDate().isBefore(job.getJobPostingDate()))
+            || (job.getJobClosureDate().equals(date))
+            || (job.getJobPostingDate().isBefore(date))
+            || (job.getJobClosureDate().isBefore(date))
+            )
+            {
+                System.out.println("Job posting date cant be before job closure date" +
+                        "Job closure date cant be on or before today's date.");
+                validJob = false;
+            }
+
+            if(job.getJobClosureDate().minusDays(15).isBefore(job.getJobPostingDate()))
+            {
+                System.out.println("Job should be posted for at least 15 days before cloure");
+                validJob = false;
+            }
+
         }
-        else if(employee.getTypeOfEmployee().equals(TypeOfEmployee.PROGRAMMER))
+        else
         {
-            System.out.println("You are eligible to apply for the job: " + jobMap.get("ABC101") + " and " + jobMap.get("ABC102"));
+            validJob = false;
         }
+
+        //Max salary can’t be lesser than or equal to min salary
+        if(job.getMinSalary() != 0 && job.getMaxSalary() != 0)
+        {
+            if(job.getMaxSalary() <= job.getMinSalary())
+            {
+                System.out.println("Max salary can’t be lesser than or equal to min salary");
+                validJob = false;
+            }
+        }
+        else
+        {
+            validJob = false;
+        }
+
+        //job description can’t be null and it should be of at least 20 characters
+        if(job.getJobDescription() != null)
+        {
+            if(job.getJobDescription().length() < 20)
+            {
+                System.out.println("Job description is too short");
+                validJob = false;
+            }
+        }
+        else
+        {
+            validJob = false;
+        }
+
+        return validJob;
     }
 }

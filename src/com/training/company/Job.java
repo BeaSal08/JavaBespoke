@@ -1,5 +1,7 @@
 package com.training.company;
 
+import java.time.LocalDate;
+
 public class Job {
     private String jobName;
     private TypeOfEmployee typeOfEmployee;
@@ -7,6 +9,12 @@ public class Job {
     private long maxSalary;
     private String location;
     private String jobId;
+
+    private LocalDate jobPostingDate;
+
+    private LocalDate jobClosureDate;
+
+    private String jobDescription;
 
     public String getJobName() {
         return jobName;
@@ -54,5 +62,29 @@ public class Job {
 
     public void setJobId(String jobId) {
         this.jobId = jobId;
+    }
+
+    public LocalDate getJobPostingDate() {
+        return jobPostingDate;
+    }
+
+    public void setJobPostingDate(LocalDate jobPostingDate) {
+        this.jobPostingDate = jobPostingDate;
+    }
+
+    public LocalDate getJobClosureDate() {
+        return jobClosureDate;
+    }
+
+    public void setJobClosureDate(LocalDate jobClosureDate) {
+        this.jobClosureDate = jobClosureDate;
+    }
+
+    public String getJobDescription() {
+        return jobDescription;
+    }
+
+    public void setJobDescription(String jobDescription) {
+        this.jobDescription = jobDescription;
     }
 }
