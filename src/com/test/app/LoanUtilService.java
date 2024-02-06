@@ -16,7 +16,7 @@ public class LoanUtilService {
                 break;
             case "EDUCATION" : interestRate = 7;
                 break;
-            default : throw new RuntimeException(loanType+ " is not a valid loan type");
+            default : throw new RuntimeException(loanType+ " is not a valid loan type!");
         }
     }
 
